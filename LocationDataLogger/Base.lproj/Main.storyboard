@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="LocationDataLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfq-dK-odX">
+                                <rect key="frame" x="227" y="-497" width="147" height="30"/>
+                                <state key="normal" title="Start logging location">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getMyLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NS8-IX-4ra"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Waiting for data..." translatesAutoresizingMaskIntoConstraints="NO" id="Wpc-Sn-5Al">
+                                <rect key="frame" x="16" y="200" width="568" height="440"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="452" id="e5G-vE-tgs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-Iy-pBV">
+                                <rect key="frame" x="279" y="-459" width="43" height="30"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishJourney:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hsq-sN-Nm9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfq-dK-odX" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="1Xa-pI-7Kq"/>
+                            <constraint firstItem="Wpc-Sn-5Al" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="CID-LF-otZ"/>
+                            <constraint firstItem="Wpc-Sn-5Al" firstAttribute="centerX" secondItem="UFR-Iy-pBV" secondAttribute="centerX" id="bRF-w0-2Ik"/>
+                            <constraint firstItem="wfq-dK-odX" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="dVr-I5-UKo"/>
+                            <constraint firstItem="UFR-Iy-pBV" firstAttribute="centerX" secondItem="wfq-dK-odX" secondAttribute="centerX" id="faH-Y0-GQp"/>
+                            <constraint firstItem="UFR-Iy-pBV" firstAttribute="top" secondItem="wfq-dK-odX" secondAttribute="bottom" constant="8" symbolic="YES" id="jxU-Pw-XlZ"/>
+                            <constraint firstItem="Wpc-Sn-5Al" firstAttribute="top" secondItem="UFR-Iy-pBV" secondAttribute="bottom" constant="24" id="o5R-Ug-9WI"/>
+                            <constraint firstAttribute="bottom" secondItem="Wpc-Sn-5Al" secondAttribute="bottom" constant="20" symbolic="YES" id="rF0-kK-wvw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="jsonOutputScreen" destination="Wpc-Sn-5Al" id="n79-w7-UI3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
